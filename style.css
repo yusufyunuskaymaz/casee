@@ -125,6 +125,8 @@ a {
 
 .card img {
   max-width: 100%;
+  width: 224px;
+  height: 224px;
 }
 
 .card .brand-name {
@@ -167,4 +169,16 @@ a {
 }
 
 
+
+.card img#secondImg {
+  display: none;  
+}
+
+.card img#firstImg:hover + img#secondImg {
+  display: block;  
+}
+
+.card img#firstImg:hover {
+  display: none;  
+}
 

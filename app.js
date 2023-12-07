@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl1: "assets/images/havuc.png",
+      imgUrl2: "assets/images/img4.png",
     },
     {
       brandName: "Marka Adı2",
@@ -14,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl1: "assets/images/pizza.png",
+imgUrl2: "assets/images/img1.png",
     },
     {
       brandName: "Marka Adı3",
@@ -22,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl1: "assets/images/et.png",
+imgUrl2: "assets/images/img2.png",
     },
     {
       brandName: "Marka Adı4",
@@ -30,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl1: "assets/images/makarna.png",
+imgUrl2: "assets/images/img3.png",
     },
     {
       brandName: "Marka Adı5",
@@ -38,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl1: "assets/images/havuc.png",
+imgUrl2: "assets/images/pizza.png",
     },
     {
       brandName: "Marka Adı6",
@@ -46,7 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl1: "assets/images/havuc.png",
+imgUrl2: "assets/images/pizza.png",
     },
     {
       brandName: "Marka Adı7",
@@ -54,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl1: "assets/images/havuc.png",
+imgUrl2: "assets/images/pizza.png",
     },
     {
       brandName: "Marka Adı8",
@@ -62,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl1: "assets/images/havuc.png",
+imgUrl2: "assets/images/pizza.png",
     },
     {
       brandName: "Marka Adı9",
@@ -70,7 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl1: "assets/images/havuc.png",
+imgUrl2: "assets/images/pizza.png",
     },
   ];
   const DISCOUNTS = [
@@ -80,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/pizza.png",
+      imgUrl1: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı2",
@@ -88,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/pizza.png",
+      imgUrl1: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı3",
@@ -96,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/pizza.png",
+      imgUrl1: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı4",
@@ -104,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/pizza.png",
+      imgUrl1: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı5",
@@ -112,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/pizza.png",
+      imgUrl1: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı6",
@@ -120,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/pizza.png",
+      imgUrl1: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı7",
@@ -128,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/pizza.png",
+      imgUrl1: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı8",
@@ -136,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/pizza.png",
+      imgUrl1: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı9",
@@ -144,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/pizza.png",
+      imgUrl1: "assets/images/pizza.png",
     },
   ];
   const OUTLET = [
@@ -154,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/et.png",
+      imgUrl1: "assets/images/et.png",
     },
     {
       brandName: "OUTLETMarka Adı2",
@@ -162,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/et.png",
+      imgUrl1: "assets/images/et.png",
     },
     {
       brandName: "OUTLETMarka Adı3",
@@ -170,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/et.png",
+      imgUrl1: "assets/images/et.png",
     },
     {
       brandName: "OUTLETMarka Adı4",
@@ -178,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/et.png",
+      imgUrl1: "assets/images/et.png",
     },
     {
       brandName: "OUTLETMarka Adı5",
@@ -186,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/et.png",
+      imgUrl1: "assets/images/et.png",
     },
     {
       brandName: "OUTLETMarka Adı5",
@@ -194,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/et.png",
+      imgUrl1: "assets/images/et.png",
     },
     {
       brandName: "OUTLETMarka Adı5",
@@ -202,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/et.png",
+      imgUrl1: "assets/images/et.png",
     },
     {
       brandName: "OUTLETMarka Adı5",
@@ -210,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/et.png",
+      imgUrl1: "assets/images/et.png",
     },
     {
       brandName: "OUTLETMarka Adı5",
@@ -218,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/et.png",
+      imgUrl1: "assets/images/et.png",
     },
   ];
 
@@ -232,8 +241,11 @@ document.addEventListener("DOMContentLoaded", function () {
       defaultSliderData = CATEGORIES[index];
 
       tabs.forEach((t) => t.classList.remove("selected"));
+
       tab.classList.add("selected");
+
       startSlider(false);
+
       createSliderContainer(defaultSliderData);
     });
   });
@@ -248,7 +260,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "align-items-center"
     );
     cardElement.innerHTML = `
-      <img src="${cardData.imgUrl}" alt="havuc" />
+      <img id="firstImg" src="${cardData.imgUrl1}" alt="havuc" />
+      <img id="secondImg" src="${cardData.imgUrl2}" alt="havuc" />
       <p class="brand-name">${cardData.brandName}</p>
       <p class="description">${cardData.description}</p>
       <a class="discount" href="${cardData.discountLink}">%20 İNDİRİM</a>
@@ -281,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
     all: {
       slidesToShow: 4,
       transitionTimingFunction: "linear",
-      loop: false,
+      loop: true,
     },
     "(max-width: 900px)": {
       slidesToShow: 2,
@@ -295,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const startSlider = (value=true) => {
     
-    // tab değiştiğinde önceki slider da pagination daki yerini diğer tab a aktarmaması için
+    // tab değiştiğinde önceki slider ın pagination daki yerini diğer tab a aktarmaması için
     if (!value) {
       slider.refresh()
     }
