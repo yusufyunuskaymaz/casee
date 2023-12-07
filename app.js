@@ -1,18 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const el = document.querySelector(".blaze-slider");
-  const config = {
-    all: {
-      slidesToShow: 4,
-      transitionTimingFunction: "linear",
-    },
-    "(max-width: 900px)": {
-      slidesToShow: 2,
-    },
-    "(max-width: 500px)": {
-      slidesToShow: 1,
-    },
-  };
-  const cardDataArray = [
+  const NEWESTS = [
     {
       brandName: "Marka Adı1",
       description: "Ürün açıklaması 1",
@@ -85,16 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
       newPrice: "215,90 TL",
       imgUrl: "assets/images/havuc.png",
     },
-    
   ];
-  const cardDataArray2 = [
+  const DISCOUNTS = [
     {
       brandName: "FarklıMarka Adı1",
       description: "Ürün açıklaması 1",
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı2",
@@ -102,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı3",
@@ -110,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı4",
@@ -118,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı5",
@@ -126,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı6",
@@ -134,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı7",
@@ -142,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı8",
@@ -150,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl: "assets/images/pizza.png",
     },
     {
       brandName: "FarklıMarka Adı9",
@@ -158,10 +144,67 @@ document.addEventListener("DOMContentLoaded", function () {
       discountLink: "#",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl: "assets/images/havuc.png",
+      imgUrl: "assets/images/pizza.png",
     },
-    
   ];
+  const OUTLET = [
+    {
+      brandName: "OUTLETMarka Adı1",
+      description: "Ürün açıklaması 1",
+      discountLink: "#",
+      oldPrice: "250,90 TL",
+      newPrice: "215,90 TL",
+      imgUrl: "assets/images/et.png",
+    },
+    {
+      brandName: "OUTLETMarka Adı2",
+      description: "Ürün açıklaması 2",
+      discountLink: "#",
+      oldPrice: "250,90 TL",
+      newPrice: "215,90 TL",
+      imgUrl: "assets/images/et.png",
+    },
+    {
+      brandName: "OUTLETMarka Adı3",
+      description: "Ürün açıklaması 3",
+      discountLink: "#",
+      oldPrice: "250,90 TL",
+      newPrice: "215,90 TL",
+      imgUrl: "assets/images/et.png",
+    },
+    {
+      brandName: "OUTLETMarka Adı4",
+      description: "Ürün açıklaması 1",
+      discountLink: "#",
+      oldPrice: "250,90 TL",
+      newPrice: "215,90 TL",
+      imgUrl: "assets/images/et.png",
+    },
+    {
+      brandName: "OUTLETMarka Adı5",
+      description: "Ürün açıklaması 1",
+      discountLink: "#",
+      oldPrice: "250,90 TL",
+      newPrice: "215,90 TL",
+      imgUrl: "assets/images/et.png",
+    },
+  ];
+
+  const CATEGORIES = [NEWESTS, DISCOUNTS, OUTLET];
+  let defaultSliderData = CATEGORIES[0];
+
+  const tabs = document.querySelectorAll(".category-item");
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      defaultSliderData = CATEGORIES[index];
+
+      tabs.forEach((t) => t.classList.remove("selected"));
+      tab.classList.add("selected");
+      startSlider();
+      createSliderContainer(defaultSliderData);
+    });
+  });
 
   function createCardElement(cardData) {
     // örnek kart
@@ -183,14 +226,42 @@ document.addEventListener("DOMContentLoaded", function () {
     return cardElement;
   }
 
-
   // Kartları html e ekleme
 
-  const cardContainer = document.querySelector(".blaze-track");
-  cardDataArray2.forEach((cardData) => {
-    const cardElement = createCardElement(cardData);
-    cardContainer.appendChild(cardElement);
-  });
+  const createSliderContainer = (data = CATEGORIES[0]) => {
+    const cardContainer = document.querySelector(".blaze-track");
 
-  new BlazeSlider(el, config);
+    // tab değiştirildiğinde önceki slider ları silmek için
+    if (cardContainer.firstChild) {
+      cardContainer.innerHTML = "";
+    }
+    data.forEach((cardData) => {
+      const cardElement = createCardElement(cardData);
+      cardContainer.appendChild(cardElement);
+    });
+  };
+  createSliderContainer();
+
+  const startSlider = () => {
+    const el = document.querySelector(".blaze-slider");
+    // slider ayarları
+    const config = {
+      all: {
+        slidesToShow: 4,
+        transitionTimingFunction: "linear",
+        loop:false,
+      },
+      "(max-width: 900px)": {
+        slidesToShow: 2,
+      },
+      "(max-width: 500px)": {
+        slidesToShow: 1,
+      },
+    };
+
+    //slider ı başlatmak için
+    
+    new BlazeSlider(el, config);
+  };
+  startSlider();
 });

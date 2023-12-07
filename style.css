@@ -35,8 +35,6 @@ a {
   --slides-to-show: 1;
 }
 
-
-
 @media (max-width: 500px) {
   .foo-slider.blaze-slider {
     --slides-to-show: 2;
