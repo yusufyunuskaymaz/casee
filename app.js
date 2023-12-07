@@ -188,6 +188,38 @@ document.addEventListener("DOMContentLoaded", function () {
       newPrice: "215,90 TL",
       imgUrl: "assets/images/et.png",
     },
+    {
+      brandName: "OUTLETMarka Adı5",
+      description: "Ürün açıklaması 1",
+      discountLink: "#",
+      oldPrice: "250,90 TL",
+      newPrice: "215,90 TL",
+      imgUrl: "assets/images/et.png",
+    },
+    {
+      brandName: "OUTLETMarka Adı5",
+      description: "Ürün açıklaması 1",
+      discountLink: "#",
+      oldPrice: "250,90 TL",
+      newPrice: "215,90 TL",
+      imgUrl: "assets/images/et.png",
+    },
+    {
+      brandName: "OUTLETMarka Adı5",
+      description: "Ürün açıklaması 1",
+      discountLink: "#",
+      oldPrice: "250,90 TL",
+      newPrice: "215,90 TL",
+      imgUrl: "assets/images/et.png",
+    },
+    {
+      brandName: "OUTLETMarka Adı5",
+      description: "Ürün açıklaması 1",
+      discountLink: "#",
+      oldPrice: "250,90 TL",
+      newPrice: "215,90 TL",
+      imgUrl: "assets/images/et.png",
+    },
   ];
 
   const CATEGORIES = [NEWESTS, DISCOUNTS, OUTLET];
@@ -201,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       tabs.forEach((t) => t.classList.remove("selected"));
       tab.classList.add("selected");
-      startSlider();
+      startSlider(false);
       createSliderContainer(defaultSliderData);
     });
   });
@@ -242,26 +274,31 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   createSliderContainer();
 
-  const startSlider = () => {
-    const el = document.querySelector(".blaze-slider");
-    // slider ayarları
-    const config = {
-      all: {
-        slidesToShow: 4,
-        transitionTimingFunction: "linear",
-        loop:false,
-      },
-      "(max-width: 900px)": {
-        slidesToShow: 2,
-      },
-      "(max-width: 500px)": {
-        slidesToShow: 1,
-      },
-    };
+  
+  const el = document.querySelector(".blaze-slider");
+  // slider ayarları
+  const config = {
+    all: {
+      slidesToShow: 4,
+      transitionTimingFunction: "linear",
+      loop: false,
+    },
+    "(max-width: 900px)": {
+      slidesToShow: 2,
+    },
+    "(max-width: 500px)": {
+      slidesToShow: 1,
+    },
+  };
 
-    //slider ı başlatmak için
+  const slider = new BlazeSlider(el, config);
+
+  const startSlider = (value=true) => {
     
-    new BlazeSlider(el, config);
+    // tab değiştiğinde önceki slider da pagination daki yerini diğer tab a aktarmaması için
+    if (!value) {
+      slider.refresh()
+    }
   };
   startSlider();
 });

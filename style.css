@@ -32,12 +32,12 @@ a {
 }
 
 .foo-slider.blaze-slider {
-  --slides-to-show: 1;
+  --slides-to-show: 4;
 }
 
 @media (max-width: 500px) {
   .foo-slider.blaze-slider {
-    --slides-to-show: 2;
+    --slides-to-show: 1;
   }
 }
 
@@ -81,6 +81,7 @@ a {
   background-image: url("./assets/images/nextbtn.png");
   border: 1px solid var(--theme-color);
 }
+
 .blaze-prev {
   background-image: url("./assets/images/prevbtn.png");
   border: 1px solid var(--base-color);
@@ -112,6 +113,8 @@ a {
   font-size: 2rem;
 }
 
+
+
 .card {
   display: flex;
   gap: 0.5rem;
@@ -128,6 +131,7 @@ a {
   color: var(--main-text-color);
   font-weight: 700;
 }
+
 .card .description {
   color: var(--main-text-color);
   font-weight: 500;
