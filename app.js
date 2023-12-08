@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       bookMark:true
     },
     {
-      name: "Marka Adı5",
+      name: "Havuçlu Makarna",
       description: "Ürün açıklaması 2",
       newPrice: "215,90 TL",
       mealImg: `${ROUTE_IMG_URL}havuc.png`,
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
       outOfStock:true,
     },
     {
-      name: "Marka Adı6",
+      name: "Yoğurtlu Makarna",
       description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       discount:20,
       oldPrice: "250,90 TL",
@@ -64,14 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     },
     {
-      name: "Marka Adı7",
+      name: "Et Biftek",
       description: "Ürün açıklaması 1",
       newPrice: "215,90 TL",
       mealImg: `${ROUTE_IMG_URL}et.png`,
       sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      name: "Marka Adı8",
+      name: "Yoğurtlu Makarna",
       description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       outOfStock:true,
       newPrice: "215,90 TL",
@@ -80,12 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
       bookMark:true
     },
     {
-      name: "Marka Adı9",
+      name: "Havuçlu Makarna",
       description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       newPrice: "215,90 TL",
       mealImg: `${ROUTE_IMG_URL}havuc.png`,
       sauceImg: `${ROUTE_IMG_URL}img4.png`,
-    },
+    }
 
   ];
   const DISCOUNTS = [
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
       outOfStock:true
     },
     {
-      name: "FarklıMarka Adı5",
+      name: "Et Biftek",
       description: "Ürün açıklaması 2",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      name: "FarklıMarka Adı6",
+      name: "Havuçlu Makarna",
       description: "Ürün açıklaması 3",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      name: "FarklıMarka Adı7",
+      name: "Pizza",
       description: "Ürün açıklaması 1",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
       bookMark:true
     },
     {
-      name: "FarklıMarka Adı8",
+      name: "Yoğurtlu Makarna",
       description: "Ürün açıklaması 2",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      name: "FarklıMarka Adı9",
+      name: "Havuçlu Makarna",
       description: "Ürün açıklaması 3",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
       bookMark:true
     },
     {
-      name: "OUTLETMarka Adı5",
+      name: "Et Biftek",
       description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sauceImg: `${ROUTE_IMG_URL}img2.png`,
     },
     {
-      name: "OUTLETMarka Adı5",
+      name: "Pizza",
       description: "Ürün açıklaması 1",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sauceImg: `${ROUTE_IMG_URL}img1.png`,
     },
     {
-      name: "OUTLETMarka Adı5",
+      name: "Yoğurtlu Makarna",
       description: "Ürün açıklaması 1",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      name: "OUTLETMarka Adı5",
+      name: "Havuçlu Makarna",
       description: "Ürün açıklaması 1",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sauceImg: `${ROUTE_IMG_URL}img3.png`,
     },
     {
-      name: "OUTLETMarka Adı5",
+      name: "Et Biftek",
       description: "Ürün açıklaması 1",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
@@ -252,14 +252,13 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   const CATEGORIES = [NEWEST, DISCOUNTS, OUTLET];
-  // maximum 12 slider gözükecek ekranda
-  let defaultSliderData = CATEGORIES[0].slice(0,12)
-// tab indexine göre tab değiştiğinde slider a giden veriyi değiştirmek için
+  // tab indexine göre tab değiştiğinde slider a giden veriyi değiştirmek için
   const tabs = document.querySelectorAll(".category-item");
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
       
-      defaultSliderData = CATEGORIES[index].slice(0,12)
+      // maximum 12 slider gözükecek ekranda
+      let defaultSliderData = CATEGORIES[index]
 
       // tab rengini değiştirmek için
       tabs.forEach((t) => t.classList.remove("selected"));
@@ -310,6 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // tab değiştirildiğinde önceki slider ları silmek için
     if (cardContainer.firstChild) cardContainer.innerHTML = "";
     // en fazla 12 slider gözükecek ekranda
+    console.log(data,"deneme")
     data.slice(0,12).forEach((cardData) => {
       const cardElement = createCardElement(cardData);
       cardContainer.appendChild(cardElement);
