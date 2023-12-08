@@ -60,7 +60,7 @@ a {
   color: #0000;
   width: 6px;
   height: 6px;
-  background-color: gray;
+  background-color: var(--base-color);
   border-radius: 6px;
   border: none;
 }
@@ -215,7 +215,7 @@ a {
   left: 6rem;
 }
 .bookmarkRibbon2 {
-  width: 70px;
+  width: 72px;
   right: 4.5rem;
   background-color: #8D95C9;
 }
