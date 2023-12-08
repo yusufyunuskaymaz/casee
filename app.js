@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       mealImg: `${ROUTE_IMG_URL}havuc.png`,
       sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
+
   ];
   const DISCOUNTS = [
     {
@@ -251,12 +252,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   const CATEGORIES = [NEWEST, DISCOUNTS, OUTLET];
-  let defaultSliderData = CATEGORIES[0];
+  // maximum 12 slider gözükecek ekranda
+  let defaultSliderData = CATEGORIES[0].slice(0,12)
 // tab indexine göre tab değiştiğinde slider a giden veriyi değiştirmek için
   const tabs = document.querySelectorAll(".category-item");
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
-      defaultSliderData = CATEGORIES[index];
+      
+      defaultSliderData = CATEGORIES[index].slice(0,12)
 
       // tab rengini değiştirmek için
       tabs.forEach((t) => t.classList.remove("selected"));
@@ -306,8 +309,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // tab değiştirildiğinde önceki slider ları silmek için
     if (cardContainer.firstChild) cardContainer.innerHTML = "";
-    
-    data.forEach((cardData) => {
+    // en fazla 12 slider gözükecek ekranda
+    data.slice(0,12).forEach((cardData) => {
       const cardElement = createCardElement(cardData);
       cardContainer.appendChild(cardElement);
     });
