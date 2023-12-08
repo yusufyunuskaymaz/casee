@@ -186,7 +186,8 @@ document.addEventListener("DOMContentLoaded", function () {
       mealImg: `${ROUTE_IMG_URL}pizza.png`,
       sauceImg: `${ROUTE_IMG_URL}img1.png`,
       bookMark:true,
-      outOfStock:false
+      outOfStock:false,
+      discount:15
     },
     {
       name: "Havuçlu Makarna",
