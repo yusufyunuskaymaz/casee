@@ -79,7 +79,10 @@ a {
 }
 
 .category {
-  gap: 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .category {
@@ -96,6 +99,10 @@ a {
 .category .selected {
   color: var(--main-text-color);
   border-bottom: 2px solid var(--theme-color);
+}
+
+.category span{
+  display: inline-block ;
 }
 
 .main-title {
@@ -195,7 +202,6 @@ a {
 .bookmarkRibbon2 {
   width: 48px;
   height: 40px;
-  background: var(--theme-color);
   clip-path: polygon(
     0% 0%,
     100% 0%,
@@ -213,19 +219,15 @@ a {
 
 }
 .bookmarkRibbon {
-  /* margin-left: 1rem; */
+  width: 48px;
+  background: var(--theme-color);
 }
 .bookmarkRibbon2 {
   width: 72px;
   background-color: #8D95C9;
 }
 
-.tab{
-  gap: 1.2rem;
-}
-.tab span{
-  display: inline-block;
-}
+
 
 /* Fix Layout shifts - İlk yüklenmede diğer ekran boyutarındaki default slider şekline göre şekil almaması için */
 
@@ -236,5 +238,8 @@ a {
 @media (max-width: 500px) {
   .foo-slider.blaze-slider {
     --slides-to-show: 1;
+  }
+  .category{
+    gap: 1rem;
   }
 }
