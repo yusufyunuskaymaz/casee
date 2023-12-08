@@ -31,15 +31,6 @@ a {
   text-align: center;
 }
 
-.foo-slider.blaze-slider {
-  --slides-to-show: 4;
-}
-
-@media (max-width: 500px) {
-  .foo-slider.blaze-slider {
-    --slides-to-show: 1;
-  }
-}
 
 .blaze-pagination {
   display: flex;
@@ -126,6 +117,7 @@ a {
   max-width: 100%;
   width: 224px;
   height: 224px;
+  object-fit: contain;
 }
 
 .card .brand-name {
@@ -191,6 +183,14 @@ a {
   pointer-events: none;
 }
 
+
+.bookmarkDiv{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  gap: .5rem;
+}
 .bookmarkRibbon,
 .bookmarkRibbon2 {
   width: 48px;
@@ -208,14 +208,30 @@ a {
   font-weight: 700;
   font-size: 0.875rem;
   padding-top: 0.3rem;
-  position: absolute;
   margin-top: -1rem;
+  pointer-events: none;
+
 }
 .bookmarkRibbon {
-  left: 6rem;
+  /* margin-left: 1rem; */
 }
 .bookmarkRibbon2 {
   width: 72px;
-  right: 4.5rem;
   background-color: #8D95C9;
+}
+
+.tab{
+  gap: 1.2rem;
+}
+
+/* Fix Layout shifts - İlk yüklenmede diğer ekran boyutarındaki default slider şekline göre şekil almaması için */
+
+.foo-slider.blaze-slider {
+  --slides-to-show: 4;
+}
+
+@media (max-width: 500px) {
+  .foo-slider.blaze-slider {
+    --slides-to-show: 1;
+  }
 }

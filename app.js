@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
       newPrice: "215,90 TL",
       imgUrl1: "assets/images/makarna.png",
       imgUrl2: "assets/images/img2.png",
+      outOfStock:true
     },
     {
       brandName: "Havuçlu Makarna",
@@ -117,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
       newPrice: "215,90 TL",
       imgUrl1: "assets/images/pizza.png",
       imgUrl2: "assets/images/img4.png",
+      outOfStock:true
     },
     {
       brandName: "FarklıMarka Adı5",
@@ -164,7 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       brandName: "Pizza",
       description: "Ürün açıklaması 1",
-
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
       imgUrl1: "assets/images/pizza.png",
@@ -178,24 +179,26 @@ document.addEventListener("DOMContentLoaded", function () {
       newPrice: "215,90 TL",
       imgUrl1: "assets/images/et.png",
       imgUrl2: "assets/images/img2.png",
+      bookMark:true
     },
     {
       brandName: "Havuçlu Makarna",
       description: "Ürün açıklaması 3",
-
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
       imgUrl1: "assets/images/havuc.png",
       imgUrl2: "assets/images/img3.png",
+      outOfStock:true
+
     },
     {
       brandName: "Yoğurtlu Makarna",
       description: "Ürün açıklaması 1",
-
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
       imgUrl1: "assets/images/makarna.png",
       imgUrl2: "assets/images/img4.png",
+      bookMark:true
     },
     {
       brandName: "OUTLETMarka Adı5",
@@ -273,24 +276,23 @@ document.addEventListener("DOMContentLoaded", function () {
       "align-items-center"
     );
     cardElement.innerHTML = `
-    <a href="https://www.ideasoft.com.tr/" style="position:relative">
+    <a href="https://www.ideasoft.com.tr/" target="_blank" style="position:relative">
       <img id="firstImg" src="${cardData.imgUrl1}" alt="havuc" />
       <img id="secondImg" src="${cardData.imgUrl2}" alt="havuc" />
       ${cardData?.outOfStock ? `<span class="outOfStock">Tükendi</span>` : ""}
       </a>
-      <a href="https://www.ideasoft.com.tr/">
+      <a href="https://www.ideasoft.com.tr/" target="_blank">
       <p class="brand-name">${cardData.brandName}</p>
       </a>
       <p class="description">${cardData.description}</p>
       ${cardData.discount ? `<p class="discount">${cardData.discount}</p>` : ""}
       ${cardData.oldPrice ? `<span class="old-price">${cardData.oldPrice}</span>` : ""}
       
-      <p class="new-price justify-self-end mt-auto">${cardData.newPrice}</p>
+      <p class="new-price justify-self-end mt-auto ">${cardData.newPrice}</p>
+      <div class="bookmarkDiv">
       ${cardData.bookMark ? `<div class="bookmarkRibbon">YENİ</div>
       <div class="bookmarkRibbon2">HEDİYELİ</div>` : ""}
-      
-
-
+      </div>
     `;
     return cardElement;
   }
@@ -330,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const slider = new BlazeSlider(el, config);
 
   const startSlider = (value = true) => {
-    // tab değiştiğinde önceki slider ın pagination daki yerini diğer tab a aktarmaması için
+    // tab değiştiğinde önceki slider ın pagination daki yerini diğer tab a aktarmaması için slider ı yeniliyor
     if (!value) {
       slider.refresh();
     }
