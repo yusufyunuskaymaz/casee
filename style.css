@@ -223,6 +223,9 @@ a {
 .tab{
   gap: 1.2rem;
 }
+.tab span{
+  display: inline-block;
+}
 
 /* Fix Layout shifts - İlk yüklenmede diğer ekran boyutarındaki default slider şekline göre şekil almaması için */
 
