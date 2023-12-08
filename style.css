@@ -113,14 +113,13 @@ a {
   font-size: 2rem;
 }
 
-
-
 .card {
   display: flex;
   gap: 0.5rem;
   border: 1px solid var(--base-color);
   border-radius: 0.5rem;
   padding: 1rem;
+  position: relative;
 }
 
 .card img {
@@ -168,17 +167,55 @@ a {
   margin-top: 1rem;
 }
 
-
-
 .card img#secondImg {
-  display: none;  
+  display: none;
 }
 
 .card img#firstImg:hover + img#secondImg {
-  display: block;  
+  display: block;
 }
 
 .card img#firstImg:hover {
-  display: none;  
+  display: none;
 }
 
+.outOfStock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--main-text-color);
+  color: #fff;
+  padding: 0.5rem 1.15rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.bookmarkRibbon,
+.bookmarkRibbon2 {
+  width: 48px;
+  height: 40px;
+  background: var(--theme-color);
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    50% calc(100% - 12px),
+    0% 100%,
+    0% 0%
+  );
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding-top: 0.3rem;
+  position: absolute;
+  margin-top: -1rem;
+}
+.bookmarkRibbon {
+  left: 6rem;
+}
+.bookmarkRibbon2 {
+  width: 70px;
+  right: 4.5rem;
+  background-color: #8D95C9;
+}
