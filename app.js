@@ -279,7 +279,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "card",
       "flex-column",
       "justify-content-start",
-      "align-items-center"
+      "align-items-center",
+      "pr-xs-1"
     );
     cardElement.innerHTML = `
     <a href="https://www.ideasoft.com.tr/" target="_blank" style="position:relative">
