@@ -1,261 +1,264 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const NEWESTS = [
+
+  // Bu proje Bootstrap 4 Grid Yapısı ve Vanilla Js ile yapıldı
+  // Düz css kullanıldı
+  // Slider için Blaze Slider kütüphanesi kullanıldı
+
+  // 3 ayrı tab için 3 slider oluşturmak yerine tek slider oluşturuldu ve tab değiştiğinde bu slider a giden veri değişiyor sebebi ise uzun uzun html yazmamak, clean code olması ve yeniden kullanılabilir olması. Slider verisi sanki backend den alınıyormuş gibi yapıldı. 
+
+  const ROUTE_IMG_URL = "https://raw.githubusercontent.com/yusufyunuskaymaz/casee/main/assets/images/"
+  const NEWEST = [
     {
-      brandName: "Havuçlu Makarna",
+      name: "Havuçlu Makarna",
       description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
-      discount:"%20 İNDİRİM",
-      oldPrice: "250,90 TL",
-      newPrice: "215,90 TL",
-      imgUrl1: "assets/images/havuc.png",
-      imgUrl2: "assets/images/img4.png",
+      discount:20,
+      oldPrice: 250.90,
+      newPrice: 250.90,
+      mealImg: `${ROUTE_IMG_URL}havuc.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
       
     },
     {
-      brandName: "Pizza",
+      name: "Pizza",
       description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/pizza.png",
-      imgUrl2: "assets/images/img1.png",
+      mealImg: `${ROUTE_IMG_URL}pizza.png`,
+      sauceImg: `${ROUTE_IMG_URL}img1.png`,
     },
     {
-      brandName: "Et Biftek",
+      name: "Et Biftek",
       description: "Ürün açıklaması 3",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/et.png",
-      imgUrl2: "assets/images/img2.png",
-      outOfStock:true
+      mealImg: `${ROUTE_IMG_URL}et.png`,
+      sauceImg: `${ROUTE_IMG_URL}img2.png`,
+      outOfStock:true,
+      discount:null
     },
     {
-      brandName: "Yoğurtlu Makarna",
+      name: "Yoğurtlu Makarna",
       description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
-      discount:"%15 İNDİRİM",
+      discount:15,
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/makarna.png",
-      imgUrl2: "assets/images/img3.png",
+      mealImg: `${ROUTE_IMG_URL}makarna.png`,
+      sauceImg: `${ROUTE_IMG_URL}img3.png`,
       bookMark:true
     },
     {
-      brandName: "Marka Adı5",
+      name: "Marka Adı5",
       description: "Ürün açıklaması 2",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/havuc.png",
-      imgUrl2: "assets/images/pizza.png",
+      mealImg: `${ROUTE_IMG_URL}havuc.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
       outOfStock:true,
     },
     {
-      brandName: "Marka Adı6",
-      description: "Ürün açıklaması 3",
-      discount:"%20 İNDİRİM",
+      name: "Marka Adı6",
+      description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
+      discount:20,
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/pizza.png",
-      imgUrl2: "assets/images/img3.png",
+      mealImg: `${ROUTE_IMG_URL}makarna.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
       bookMark:true
 
     },
     {
-      brandName: "Marka Adı7",
+      name: "Marka Adı7",
       description: "Ürün açıklaması 1",
-
-      oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/et.png",
-      imgUrl2: "assets/images/pizza.png",
+      mealImg: `${ROUTE_IMG_URL}et.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      brandName: "Marka Adı8",
-      description: "Ürün açıklaması 2",
+      name: "Marka Adı8",
+      description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       outOfStock:true,
-      oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/makarna.png",
-      imgUrl2: "assets/images/pizza.png",
+      mealImg: `${ROUTE_IMG_URL}makarna.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
       bookMark:true
     },
     {
-      brandName: "Marka Adı9",
-      description: "Ürün açıklaması 3",
-
-      oldPrice: "250,90 TL",
+      name: "Marka Adı9",
+      description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/pizza.png",
-      imgUrl2: "assets/images/pizza.png",
+      mealImg: `${ROUTE_IMG_URL}havuc.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
   ];
   const DISCOUNTS = [
     {
-      brandName: "Et Biftek",
-      description: "Ürün açıklaması 1",
+      name: "Et Biftek",
+      description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/et.png",
-      imgUrl2: "assets/images/img1.png",
+      discount:15,
+      mealImg: `${ROUTE_IMG_URL}et.png`,
+      sauceImg: `${ROUTE_IMG_URL}img1.png`,
       bookMark:true
     },
     {
-      brandName: "Yoğurtlu Makarna",
+      name: "Yoğurtlu Makarna",
       description: "Ürün açıklaması 2",
-      oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/makarna.png",
-      imgUrl2: "assets/images/img2.png",
+      mealImg: `${ROUTE_IMG_URL}havuc.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
       outOfStock:true
     },
     {
-      brandName: "Havuçlu Makarna",
-      description: "Ürün açıklaması 3",
+      name: "Havuçlu Makarna",
+      description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/havuc.png",
-      imgUrl2: "assets/images/img3.png",
+      discount:30,
+      mealImg: `${ROUTE_IMG_URL}pizza.png`,
+      sauceImg: `${ROUTE_IMG_URL}img2.png`,
       bookMark:true
     },
     {
-      brandName: "Pizza",
+      name: "Pizza",
       description: "Ürün açıklaması 1",
-      oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/pizza.png",
-      imgUrl2: "assets/images/img4.png",
+      mealImg: `${ROUTE_IMG_URL}makarna.png`,
+      sauceImg: `${ROUTE_IMG_URL}img3.png`,
       outOfStock:true
     },
     {
-      brandName: "FarklıMarka Adı5",
+      name: "FarklıMarka Adı5",
       description: "Ürün açıklaması 2",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/et.png",
-      imgUrl2: "assets/images/img1.png",
+      mealImg: `${ROUTE_IMG_URL}et.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      brandName: "FarklıMarka Adı6",
+      name: "FarklıMarka Adı6",
       description: "Ürün açıklaması 3",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/makarna.png",
-      imgUrl2: "assets/images/img2.png",
+      mealImg: `${ROUTE_IMG_URL}havuc.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      brandName: "FarklıMarka Adı7",
+      name: "FarklıMarka Adı7",
       description: "Ürün açıklaması 1",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/havuc.png",
-      imgUrl2: "assets/images/img3.png",
+      mealImg: `${ROUTE_IMG_URL}pizza.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
       bookMark:true
     },
     {
-      brandName: "FarklıMarka Adı8",
+      name: "FarklıMarka Adı8",
       description: "Ürün açıklaması 2",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/pizza.png",
-      imgUrl2: "assets/images/img4.png",
+      mealImg: `${ROUTE_IMG_URL}makarna.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      brandName: "FarklıMarka Adı9",
+      name: "FarklıMarka Adı9",
       description: "Ürün açıklaması 3",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/makarna.png",
-      imgUrl2: "assets/images/img1.png",
+      mealImg: `${ROUTE_IMG_URL}havuc.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
   ];
   const OUTLET = [
     {
-      brandName: "Pizza",
+      name: "Pizza",
       description: "Ürün açıklaması 1",
       oldPrice: "250,90 TL",
+      discount:20,
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/pizza.png",
-      imgUrl2: "assets/images/img1.png",
+      mealImg: `${ROUTE_IMG_URL}et.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
+      bookMark:false,
     },
     {
-      brandName: "Et Biftek",
-      description: "Ürün açıklaması 2",
-
+      name: "Et Biftek",
+      description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/et.png",
-      imgUrl2: "assets/images/img2.png",
-      bookMark:true
+      mealImg: `${ROUTE_IMG_URL}pizza.png`,
+      sauceImg: `${ROUTE_IMG_URL}img1.png`,
+      bookMark:true,
+      outOfStock:false
     },
     {
-      brandName: "Havuçlu Makarna",
+      name: "Havuçlu Makarna",
       description: "Ürün açıklaması 3",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/havuc.png",
-      imgUrl2: "assets/images/img3.png",
+      mealImg: `${ROUTE_IMG_URL}makarna.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
       outOfStock:true
 
     },
     {
-      brandName: "Yoğurtlu Makarna",
-      description: "Ürün açıklaması 1",
+      name: "Yoğurtlu Makarna",
+      description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/makarna.png",
-      imgUrl2: "assets/images/img4.png",
+      discount:20,
+      mealImg: `${ROUTE_IMG_URL}havuc.png`,
+      sauceImg: `${ROUTE_IMG_URL}img3.png`,
       bookMark:true
     },
     {
-      brandName: "OUTLETMarka Adı5",
-      description: "Ürün açıklaması 1",
-
+      name: "OUTLETMarka Adı5",
+      description: "Ürün adı bu alanda yer alıyor ve iki satır olarak uzunlukta gelebilir",
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/pizza.png",
-      imgUrl2: "assets/images/img1.png",
+      mealImg: `${ROUTE_IMG_URL}et.png`,
+      sauceImg: `${ROUTE_IMG_URL}img2.png`,
     },
     {
-      brandName: "OUTLETMarka Adı5",
+      name: "OUTLETMarka Adı5",
       description: "Ürün açıklaması 1",
-
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/et.png",
-      imgUrl2: "assets/images/img2.png",
+      mealImg: `${ROUTE_IMG_URL}pizza.png`,
+      sauceImg: `${ROUTE_IMG_URL}img1.png`,
     },
     {
-      brandName: "OUTLETMarka Adı5",
+      name: "OUTLETMarka Adı5",
       description: "Ürün açıklaması 1",
-
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/havuc.png",
-      imgUrl2: "assets/images/img3.png",
+      mealImg: `${ROUTE_IMG_URL}makarna.png`,
+      sauceImg: `${ROUTE_IMG_URL}img4.png`,
     },
     {
-      brandName: "OUTLETMarka Adı5",
+      name: "OUTLETMarka Adı5",
       description: "Ürün açıklaması 1",
-
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/makarna.png",
-      imgUrl2: "assets/images/img4.png",
+      mealImg: `${ROUTE_IMG_URL}havuc.png`,
+      sauceImg: `${ROUTE_IMG_URL}img3.png`,
     },
     {
-      brandName: "OUTLETMarka Adı5",
+      name: "OUTLETMarka Adı5",
       description: "Ürün açıklaması 1",
-
       oldPrice: "250,90 TL",
       newPrice: "215,90 TL",
-      imgUrl1: "assets/images/pizza.png",
-      imgUrl2: "assets/images/img1.png",
+      mealImg: `${ROUTE_IMG_URL}et.png`,
+      sauceImg: `${ROUTE_IMG_URL}img2.png`,
     },
   ];
+  
 
-  const CATEGORIES = [NEWESTS, DISCOUNTS, OUTLET];
+  const CATEGORIES = [NEWEST, DISCOUNTS, OUTLET];
   let defaultSliderData = CATEGORIES[0];
-
+// tab indexine göre tab değiştiğinde slider a giden veriyi değiştirmek için
   const tabs = document.querySelectorAll(".category-item");
-
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
       defaultSliderData = CATEGORIES[index];
 
+      // tab rengini değiştirmek için
       tabs.forEach((t) => t.classList.remove("selected"));
 
       tab.classList.add("selected");
@@ -267,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function createCardElement(cardData) {
-    // örnek kart
+    // ekrana basılacak olan slider kartı
     const cardElement = document.createElement("div");
     cardElement.classList.add(
       "card",
@@ -277,15 +280,15 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     cardElement.innerHTML = `
     <a href="https://www.ideasoft.com.tr/" target="_blank" style="position:relative">
-      <img id="firstImg" src="${cardData.imgUrl1}" alt="havuc" />
-      <img id="secondImg" src="${cardData.imgUrl2}" alt="havuc" />
+      <img id="firstImg" src="${cardData.mealImg}" alt="${cardData.name}" />
+      <img id="secondImg" src="${cardData.sauceImg}" alt="${cardData.name}" />
       ${cardData?.outOfStock ? `<span class="outOfStock">Tükendi</span>` : ""}
       </a>
       <a href="https://www.ideasoft.com.tr/" target="_blank">
-      <p class="brand-name">${cardData.brandName}</p>
+      <p class="brand-name">${cardData.name}</p>
       </a>
       <p class="description">${cardData.description}</p>
-      ${cardData.discount ? `<p class="discount">${cardData.discount}</p>` : ""}
+      ${cardData.discount ? `<p class="discount">%${cardData.discount} İNDİRİM</p>` : ""}
       ${cardData.oldPrice ? `<span class="old-price">${cardData.oldPrice}</span>` : ""}
       
       <p class="new-price justify-self-end mt-auto ">${cardData.newPrice}</p>
@@ -298,24 +301,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Kartları html e ekleme
-
   const createSliderContainer = (data = CATEGORIES[0]) => {
     const cardContainer = document.querySelector(".blaze-track");
 
     // tab değiştirildiğinde önceki slider ları silmek için
-    if (cardContainer.firstChild) {
-      cardContainer.innerHTML = "";
-    }
+    if (cardContainer.firstChild) cardContainer.innerHTML = "";
+    
     data.forEach((cardData) => {
       const cardElement = createCardElement(cardData);
       cardContainer.appendChild(cardElement);
     });
   };
+  
   createSliderContainer();
 
-  const el = document.querySelector(".blaze-slider");
+  const blazeElement = document.querySelector(".blaze-slider");
   // slider ayarları
-  const config = {
+  const sliderConfig = {
     all: {
       slidesToShow: 4,
       transitionTimingFunction: "linear",
@@ -329,13 +331,12 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   };
 
-  const slider = new BlazeSlider(el, config);
+  const slider = new BlazeSlider(blazeElement, sliderConfig);
 
   const startSlider = (value = true) => {
     // tab değiştiğinde önceki slider ın pagination daki yerini diğer tab a aktarmaması için slider ı yeniliyor
-    if (!value) {
-      slider.refresh();
-    }
+    if (!value) slider.refresh();
+    
   };
   startSlider();
 });

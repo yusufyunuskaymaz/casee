@@ -68,15 +68,38 @@ a {
   cursor: pointer;
 }
 
+
+/* slider başında ve  sonunda yön tuşlarını aktif etme */ 
+
+.blaze-slider.start .blaze-prev {
+  background-image: url("https://raw.githubusercontent.com/yusufyunuskaymaz/casee/main/assets/images/prevbtn.png");
+  border: 1px solid var(--base-color);
+}
+.blaze-slider:not(.start) .blaze-prev {
+  background-image: url("https://raw.githubusercontent.com/yusufyunuskaymaz/casee/main/assets/images/nextbtn.png");
+  border: 1px solid var(--theme-color);
+  transform: rotate(180deg);
+}
+
+.blaze-slider.end .blaze-next {
+  background-image: url("https://raw.githubusercontent.com/yusufyunuskaymaz/casee/main/assets/images/prevbtn.png");
+  border: 1px solid var(--base-color);
+  transform: rotate(180deg);
+}
+.blaze-slider:not(.end) .blaze-next {
+  background-image: url("https://raw.githubusercontent.com/yusufyunuskaymaz/casee/main/assets/images/nextbtn.png");
+  border: 1px solid var(--theme-color);
+  /* transform: rotate(180deg); */
+}
+
+
+
 .blaze-next {
-  background-image: url("./assets/images/nextbtn.png");
+  background-image: url("https://raw.githubusercontent.com/yusufyunuskaymaz/casee/main/assets/images/nextbtn.png");
   border: 1px solid var(--theme-color);
 }
 
-.blaze-prev {
-  background-image: url("./assets/images/prevbtn.png");
-  border: 1px solid var(--base-color);
-}
+
 
 .category {
   display: flex;
@@ -121,10 +144,15 @@ a {
 }
 
 .card img {
-  max-width: 100%;
-  width: 224px;
-  height: 224px;
-  object-fit: contain;
+  float: left;
+  max-width: 224px;
+  max-height: 224px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card img:nth-child(2){
+  transform: scale(1.07);
 }
 
 .card .brand-name {
@@ -179,6 +207,7 @@ a {
 }
 
 .outOfStock {
+  font-family: 'Inter', sans-serif;
   position: absolute;
   top: 50%;
   left: 50%;
